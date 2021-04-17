@@ -2,23 +2,22 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const date = new Date();
+  const hours = date.getHours();
+  let message;
+
+  if(hours < 12){
+    message = "Morning!";
+  }
+  else if(hours >= 12 && hours < 17){
+    message = "Evening!";
+  }
+  else{
+    message = "Night!";
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <h1 style={{color: "orange"}}>Good {message}</h1>
   );
 }
 
